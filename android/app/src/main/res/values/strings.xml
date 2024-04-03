@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">pensionbee_us_prototype</string>
+    <string name="title_activity_main">pensionbee_us_prototype</string>
+    <string name="package_name">com.pensionbeeus.app</string>
+    <string name="custom_url_scheme">com.pensionbeeus.app</string>
+</resources>
