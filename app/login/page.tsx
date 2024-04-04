@@ -15,7 +15,7 @@ const LogIn = () => {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="flex justify-center h-full">
             <h2>Login</h2>
             <label>
                 <span>Username:</span>

@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+body {
+  margin-top: constant(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);
+  margin-bottom: calc(4px + env(safe-area-inset-top));
+}
