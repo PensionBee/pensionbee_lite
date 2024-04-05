@@ -7,13 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build-ios": "npm run build && npx cap sync",
+    "build-ios": "npm run build && npx cap sync && npx cap run ios --target=E2483476-868C-480B-8ED6-24F34161C139",
     "build-android": "npm run build && npx cap sync"
   },
   "dependencies": {
     "@capacitor/android": "^5.7.4",
     "@capacitor/core": "^5.7.4",
     "@capacitor/ios": "^5.7.4",
+    "@capacitor/keyboard": "^5.0.8",
     "capacitor-plugin-safe-area": "^2.0.6",
     "firebase": "^10.10.0",
     "next": "14.1.4",

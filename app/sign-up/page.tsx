@@ -16,15 +16,35 @@ const SignUp = () => {
 
     return (
         <div className="flex flex-col justify-center h-full items-center">
-            <h2>Sign Up</h2>
-            <label>
-                <span>Username:</span>
-                <input name="username" onChange={(e) => setUsername(e.target.value)} />
-            </label>
-            <label>
-                <span>Password:</span>
-                <input name="password" onChange={(e) => setPassword(e.target.value) }/>
-            </label>
+            <div className="mb-2">
+                <h2>Sign Up</h2>
+            </div>
+            <div className="mb-2">
+                <label>
+                    <span>Username:</span>
+                    <input
+                        name="username"
+                        onChange={(e) => setUsername(e.target.value)} id="email-address"
+                        type="email"
+                        required
+                        value={username}
+                        placeholder="Username"
+                    />
+                </label>
+            </div>
+            <div className="mb-2">
+                <label>
+                    <span>Password:</span>
+                    <input
+                        name="password"
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
+                        required
+                        value={password}
+                        placeholder="Password"
+                    />
+                </label>
+            </div>
             <button onClick={handleSignUp}>Submit</button>
         </div>
     );
