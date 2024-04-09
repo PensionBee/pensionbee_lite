@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build-ios": "npm run build && npx cap sync && npx cap run ios --target=E2483476-868C-480B-8ED6-24F34161C139",
+    "build-ios": "npm run build && npx cap sync && npx cap run ios",
     "build-android": "npm run build && npx cap sync"
   },
   "dependencies": {
