@@ -1,6 +1,5 @@
 'use client';
 
-
 import { useState } from 'react';
 import SignUpName from './components/name';
 import SignUpEmail from './components/email';

@@ -1,6 +1,6 @@
 'use client'
 
-import { useAuthContext } from "../../src/context/AuthContext";
+import { useAuthContext } from "../../../src/context/AuthContext";
 
 const Profile = () => {
     const { currentUser, logout } = useAuthContext();
