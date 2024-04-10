@@ -1,4 +1,8 @@
-import "dotenv/config";
+import 'dotenv/config'
+import { createExpressApp, createExpressRoutes, startExpressApp } from './app'
 
-console.log('starting server...');
-console.log(process.env.EXPRESS_PORT);
+const app = await createExpressApp();
+
+createExpressRoutes(app);
+
+startExpressApp(app);
