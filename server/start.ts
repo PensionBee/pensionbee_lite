@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import { createExpressApp, createExpressRoutes, startExpressApp } from './app'
 
-const app = await createExpressApp();
+const app = createExpressApp();
 
 createExpressRoutes(app);
 

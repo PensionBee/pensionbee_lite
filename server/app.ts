@@ -1,23 +1,16 @@
 import "dotenv/config";
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
+import apiRouter from "./apiRouter";
 
 const PORT = process.env.EXPRESS_PORT;
 
-export const createExpressApp = async () => {
+export const createExpressApp = () => {
     const app: Express = express();
     return app;
 }
 
 export const createExpressRoutes = (app: Express) => {
-
-    app.get('/', (req: Request, res: Response) => {
-        res.send('Hello World!')
-    })
-
-    app.get('/test', (req: Request, res: Response) => {
-        console.log('test ep hit');
-    })
-
+    app.use('/api', apiRouter);
 }
 
 export const startExpressApp = (app: Express) => {
