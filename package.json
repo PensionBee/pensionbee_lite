@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "build-ios": "npm run build && npx cap sync && npx cap run ios",
-    "build-android": "npm run build && npx cap sync"
+    "build-android": "npm run build && npx cap sync",
+    "start-server": "tsx server/start.ts"
   },
   "dependencies": {
     "@capacitor/android": "^5.7.4",
@@ -16,6 +17,8 @@
     "@capacitor/ios": "^5.7.4",
     "@capacitor/keyboard": "^5.0.8",
     "capacitor-plugin-safe-area": "^2.0.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "firebase": "^10.10.0",
     "next": "14.1.4",
     "react": "^18",
@@ -31,6 +34,7 @@
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
+    "tsx": "^4.7.2",
     "typescript": "^5"
   }
 }
