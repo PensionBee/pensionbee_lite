@@ -1,5 +1,6 @@
 import express from "express";
 import { accountRepository } from "./accountRepository";
+import { signatureRepository } from "./signatureRepository";
 const accountManagementRouter = express.Router();
 
 accountManagementRouter.get('/get-account-by-email', async (req, res) => {
@@ -16,7 +17,11 @@ accountManagementRouter.post('/create-account', async (req, res) => {
 
 accountManagementRouter.post('/update-account', async (req, res) => {
     const completedAccount = await accountRepository.completeAccount();
-    res.json(completedAccount);
+    const newSignature = await signatureRepository.createSignature();
+    res.json({
+        completedAccount,
+        newSignature,
+    });
 });
 
 export default accountManagementRouter;
