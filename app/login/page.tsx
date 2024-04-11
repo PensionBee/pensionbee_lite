@@ -15,7 +15,7 @@ const LogIn = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center h-full items-center">
+        <div className="flex flex-col items-center">
             <div className="mb-2">
                 <h2>Login</h2>
             </div>

@@ -15,7 +15,7 @@ const SignUp = () => {
     }
 
     return (
-        <div className="flex flex-col justify-center h-full items-center">
+        <div className="flex flex-col items-center">
             <div className="mb-2">
                 <h2>Sign Up</h2>
             </div>
