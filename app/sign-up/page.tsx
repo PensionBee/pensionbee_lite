@@ -24,7 +24,7 @@ const SignUp = () => {
                     <span>Username:</span>
                     <input
                         name="username"
-                        onChange={(e) => setUsername(e.target.value)} id="email-address"
+                        onChange={(e) => setUsername(e.target.value)}
                         type="email"
                         required
                         value={username}
