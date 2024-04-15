@@ -8,12 +8,9 @@ export type AccountRepository = {
 }
 
 export const accountRepository = {
-    checkAccountExists: async (email: string | undefined) => {
-        if (!email) {
-            email = '';
-        }
+    checkAccountExists: async (email: string) => {
         const account = await prisma.account.findMany({
-            where: { email: email },
+            where: { email },
         })
         return { data: !!account };
     },
