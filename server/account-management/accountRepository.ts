@@ -1,12 +1,27 @@
+import prisma from '@/lib/prisma';
+
 export type AccountRepository = {
+    checkAccountExists: () => string;
     getByEmail: () => string;
     createAccount: () => string;
     completeAccount: () => string;
 }
 
 export const accountRepository = {
-    getByEmail: async () => {
-        return { message: "Get account by email" };
+    checkAccountExists: async (email: string | undefined) => {
+        if (!email) {
+            email = '';
+        }
+        const account = await prisma.account.findMany({
+            where: { email: email },
+        })
+        return { data: !!account };
+    },
+    getByEmail: async (email: string) => {
+        const account = await prisma.account.findMany({
+            where: { email },
+        })
+        return account;
     },
     createAccount: async () => {
         return { message: "Create new account" };
