@@ -1,0 +1,60 @@
+// schema.prisma
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["nativeTypes"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL")
+}
+
+
+
+
+
+model Account {
+    id                      Int         @id @default(autoincrement())
+    name                    String
+    email                   String
+    created_at              DateTime
+    signup_platform         String
+    dob                     DateTime
+    social_security_number  String
+    address_first_line      String
+    address_second_line     String
+    address_state           String
+    address_city            String
+    address_zip_code        String
+    kyc                     KYC[]      @relation("AccountKYC")
+    ira                     IRA[]      @relation("AccountIRA")
+    rollover                Rollover[] @relation("AccountRollover")
+}
+
+model KYC {
+    id          Int         @id @default(autoincrement())
+    created_at  DateTime
+    account     Account     @relation("AccountKYC", fields: [account_id], references: [id])
+    account_id  Int
+    validated   Boolean
+}
+
+model IRA {
+    id              Int         @id @default(autoincrement())
+    created_at      DateTime
+    account         Account     @relation("AccountIRA", fields: [account_id], references: [id])
+    account_id      Int
+    current_value   BigInt
+}
+
+model Rollover {
+    id                      Int         @id @default(autoincrement())
+    created_at              DateTime
+    account                 Account     @relation("AccountRollover", fields: [account_id], references: [id])
+    account_id              Int
+    record_keeper           String
+    value                   Float
+    transfer_complete_date  DateTime
+    transfer_start_date     DateTime
+}
