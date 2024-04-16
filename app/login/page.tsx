@@ -15,16 +15,36 @@ const LogIn = () => {
     };
 
     return (
-        <div className="flex justify-center h-full">
-            <h2>Login</h2>
-            <label>
-                <span>Username:</span>
-                <input name="username" onChange={(e) => setUsername(e.target.value)} />
-            </label>
-            <label>
-                <span>Password:</span>
-                <input name="password" onChange={(e) => setPassword(e.target.value)} />
-            </label>
+        <div className="flex flex-col items-center">
+            <div className="mb-2">
+                <h2>Login</h2>
+            </div>
+            <div className="mb-2">
+                <label>
+                    <span>Username:</span>
+                    <input
+                        name="username"
+                        onChange={(e) => setUsername(e.target.value)}
+                        type="email"
+                        required
+                        value={username}
+                        placeholder="Username"
+                    />
+                </label>
+            </div>
+            <div className="mb-2">
+                <label>
+                    <span>Password:</span>
+                    <input
+                        name="password"
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
+                        required
+                        value={password}
+                        placeholder="Password"
+                    />
+                </label>
+            </div>
             <button onClick={handleLogIn}>Submit</button>
         </div>
     )
